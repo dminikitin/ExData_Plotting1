@@ -36,7 +36,7 @@ dataTable[,Date:=as.Date(Date,format="%d/%m/%Y")];
 dataTable<-dataTable[Date<="2007-02-02"][Date>="2007-02-01"]
 
 # coerce the rest of the data columns
-dataTable[,Time:=lapply(Time, function(v) strptime(v, format="%H:%M:%S"))  ]
+dataTable[,Time:=lapply(paste(Date, Time), function(v) strptime(v, format="%Y-%m-%d %H:%M:%S"))  ]
 # is there a way to coerce all numeric columns in one call? for now do this one-by-one
 dataTable[,Global_active_power:=as.numeric(Global_active_power)];
 dataTable[,Global_intensity:=as.numeric(Global_intensity)];
