@@ -1,4 +1,6 @@
 source("readData.R")
+
+par(mfrow=c(1,1))
 plot(dataTable$Sub_metering_1 ,main=NA, xlab=NA, ylab="Energy Sub Metering", type="n")
 points(dataTable$Sub_metering_1, type="l")
 points(dataTable$Sub_metering_2, type="l",col="red")

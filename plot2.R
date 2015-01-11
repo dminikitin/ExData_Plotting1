@@ -1,5 +1,8 @@
 source("readData.R")
-plot(dataTable$Global_active_power, 
+
+par(mfrow=c(1,1))
+plot(
+  dataTable$Global_active_power, 
      type="l", 
      ylab="Global Active Power (kilowatts)", 
      xlab=NA
